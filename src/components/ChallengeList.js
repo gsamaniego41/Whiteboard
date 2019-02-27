@@ -4,9 +4,7 @@ import ChallengeView from "./ChallengeView";
 const ChallengeList = props => {
   return (
     <div>
-      {props.challenges.map(challenge => (
-        <ChallengeView challenges={challenge} key={challenge.id} />
-      ))}
+      {props.challenges.map(challenge => <ChallengeView challenges={challenge} key={challenge.id} />)}
     </div>
   );
 };
