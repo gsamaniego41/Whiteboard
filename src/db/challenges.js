@@ -25,8 +25,9 @@ const challenges = [
   },
   {
     id: 4,
-    title: "",
-    description: "",
+    title: "Calculate the Percent Difference between Two Numbers",
+    description:
+      "Create a function that takes two numbers as arguments and return the percent difference between them.",
     difficulty: "Easy",
     author: "user3"
   },
