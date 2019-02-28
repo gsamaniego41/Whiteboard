@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import challenges from "./db/challenges";
 import ChallengeList from "./components/ChallengeList";
 import {Route} from "react-router-dom";
+import Challenge from './components/Challenge';
 
 /* 
 1. Build a Nav bar that stay across all pages
@@ -12,13 +13,22 @@ import {Route} from "react-router-dom";
 
 class App extends Component {
   render() {
+    
     return (
       <div>
-        <h1>Whiteboard App</h1>
+        {/* <div>
+          <h1>Whiteboard App</h1>
+
+        </div> */}
         <Route
           path="/"
           exact
           render={() => <ChallengeList challenges={challenges} />}
+        />
+        <Route 
+          path="/challenge/:id"
+          exact
+          render={(props) => <Challenge {...props} challenge={challenges.find(el => el.id == props.match.params.id )} />}
         />
       </div>
     );
@@ -26,3 +36,7 @@ class App extends Component {
 }
 
 export default App;
+
+// Comments Section .................................//
+
+// It's like the cursors are building the app for me...
