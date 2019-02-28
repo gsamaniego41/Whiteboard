@@ -2,7 +2,9 @@ import React, {Component} from "react";
 import challenges from "./db/challenges";
 import ChallengeList from "./components/ChallengeList";
 import {Route} from "react-router-dom";
-import Challenge from './components/Challenge';
+import Challenge from "./components/Challenge";
+
+import Navbar from "./components/Navbar";
 
 /* 
 1. Build a Nav bar that stay across all pages
@@ -13,22 +15,23 @@ import Challenge from './components/Challenge';
 
 class App extends Component {
   render() {
-    
     return (
-      <div>
-        {/* <div>
-          <h1>Whiteboard App</h1>
-
-        </div> */}
+      <div className="ui container">
+        <Navbar />
         <Route
           path="/"
           exact
           render={() => <ChallengeList challenges={challenges} />}
         />
-        <Route 
+        <Route
           path="/challenge/:id"
           exact
-          render={(props) => <Challenge {...props} challenge={challenges.find(el => el.id == props.match.params.id )} />}
+          render={props => (
+            <Challenge
+              {...props}
+              challenge={challenges.find(el => el.id == props.match.params.id)}
+            />
+          )}
         />
       </div>
     );
