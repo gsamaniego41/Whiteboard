@@ -4,7 +4,7 @@ import ChallengeList from "./components/ChallengeList";
 import {Route} from "react-router-dom";
 import Challenge from "./components/Challenge";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 
 /* 
 1. Build a Nav bar that stay across all pages

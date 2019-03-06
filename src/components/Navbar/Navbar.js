@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+import AuthButton from "./AuthButton";
+
 const Navbar = () => {
   return (
     <div className="ui secondary menu">
@@ -15,8 +17,8 @@ const Navbar = () => {
             <i className="search link icon" />
           </div>
         </div>
-        <Link to="/" className="ui primary button">
-          Login
+        <Link to="/">
+          <AuthButton />
         </Link>
       </div>
     </div>
