@@ -14,10 +14,21 @@ import Navbar from "./components/Navbar/Navbar";
 */
 
 class App extends Component {
+  state = {
+    isSignedIn: false
+  };
+
+  authHandler = () => {
+    this.setState({isSignedIn: !this.state.isSignedIn});
+  };
+
   render() {
     return (
       <div className="ui container">
-        <Navbar />
+        <Navbar
+          authHandler={this.authHandler}
+          authStatus={this.state.isSignedIn}
+        />
         <Route
           path="/"
           exact
