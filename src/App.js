@@ -32,7 +32,12 @@ class App extends Component {
         <Route
           path="/"
           exact
-          render={() => <ChallengeList challenges={challenges} />}
+          render={() => (
+            <ChallengeList
+              challenges={challenges}
+              authStatus={this.state.isSignedIn}
+            />
+          )}
         />
         <Route
           path="/challenge/:id"
